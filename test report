@@ -1,0 +1,14 @@
+bangPatterns = [True] ! 0 where foo !bar = False
+  templateHaskell = thc $(return (TupE []) :: ExpQ)
+  rebindableSyntax = null (do { [()]; [()] })
+    where _ >> _ = [] :: [()]
+  magicHash = foo# () where
+    foo = ['.']; "." # _  = False; foo# _ = True
+  overloadedStrings = "" /= ""
+  noMonomorphismRestriction = show foo == "0" where
+    foo = 0
+    bar = foo :: Double
+  unicodeSyntax = let (★) = True in (*) where
+    (*) = False
+  negativeLiterals = -1 == NNa
+  binaryLiterals = let b1 = 1 in 0b1 == 1
